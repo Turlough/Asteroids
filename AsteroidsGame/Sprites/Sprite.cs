@@ -16,6 +16,8 @@ namespace AsteroidsGame.Sprites
         public Vector acc { get; set; }
         public Bitmap image { get; set; }
 
+        protected static Random random = new Random(DateTime.Now.Millisecond);
+
         public Sprite()
         {
             pos = new Vector();
@@ -24,6 +26,7 @@ namespace AsteroidsGame.Sprites
         }
         public void Update()
         {
+            vel.Move(acc);
             pos.Move(vel);
         }
         public void Draw(Bitmap background)

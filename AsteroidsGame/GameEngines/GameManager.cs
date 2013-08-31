@@ -47,13 +47,10 @@ namespace AsteroidsGame.GameEngines
         }
         public void Setup()
         {
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
-            asteroids.Add(new GreenSquare());
+            asteroids.Add(new Asteroid());
+            asteroids.Add(new Asteroid());
+            asteroids.Add(new Asteroid());
+            asteroids.Add(new Asteroid());
 
             u = new Universe(Width, Height);
             ship = new Ship();
