@@ -25,22 +25,22 @@ namespace AsteroidsGame.Sprites
             {
                 case Keys.Up:
                     {
-                        sprite.acc.Move(0, -acc);
+                        sprite.vel.Move(0, -acc);
                         break;
                     }
                 case Keys.Down:
                     {
-                        sprite.acc.Move(0, acc);
+                        sprite.vel.Move(0, acc);
                         break;
                     }
                 case Keys.Left:
                     {
-                        sprite.acc.Move(-acc, 0);
+                        sprite.vel.Move(-acc, 0);
                         break;
                     }
                 case Keys.Right:
                     {
-                        sprite.acc.Move(acc, 0);
+                        sprite.vel.Move(acc, 0);
                         break;
                     }
                 default:

@@ -44,6 +44,15 @@ namespace AsteroidsGame.Sprites
                 gr.DrawImage(image, pos.x, pos.y);
         }
 
+        public void Bounce(Universe u)
+        {
+            if (pos.x < 0 || pos.x + image.Width > u.x)
+                vel.x = -vel.x;
+
+            if (pos.y < 0 || pos.y + image.Height > u.y)
+                vel.y = -vel.y;
+        }
+
     }
 
 

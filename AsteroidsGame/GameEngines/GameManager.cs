@@ -27,7 +27,6 @@ namespace AsteroidsGame.GameEngines
             get{return form.Height; }
             set { }
         }
-        Bitmap background;
 
         public GameManager(Form f)
         {
@@ -35,7 +34,6 @@ namespace AsteroidsGame.GameEngines
             g = f.CreateGraphics();
 
             u = new Universe(form.Width, form.Height);
-            background = u.image;
             asteroids = new List<Sprite>();
 
             form.Paint += new PaintEventHandler(form_Paint);
@@ -67,10 +65,12 @@ namespace AsteroidsGame.GameEngines
                 //asteroids
                 foreach (Sprite s in asteroids)
                 {
+                    s.Bounce(u);
                     s.Update();
                     s.Draw(u.image);
                 }
                 //ship
+                ship.Bounce(u);
                 ship.Update();
                 ship.Draw(u.image);
                 //refresh screen
