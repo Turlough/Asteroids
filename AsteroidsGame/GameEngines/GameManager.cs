@@ -16,6 +16,7 @@ namespace AsteroidsGame.GameEngines
         Universe u;
         public List<Sprite> asteroids { get; set; }
         public Sprite ship { get; set; }
+        public Keyboard controller;
         
         public bool ended = false;
         public int Width { 
@@ -54,6 +55,8 @@ namespace AsteroidsGame.GameEngines
 
             u = new Universe(Width, Height);
             ship = new Ship();
+
+            controller = new Keyboard(form, ship);
         }
         public void GameLoop()
         {

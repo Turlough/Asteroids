@@ -15,7 +15,7 @@ namespace AsteroidsGame.Sprites
 
             pos = new Vector(400,500);
             vel = new Vector(0, 0);
-            acc = new Vector(1, 1);
+            acc = new Vector(0, 0);
         }
     }
 }

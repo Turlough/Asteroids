@@ -17,6 +17,15 @@ namespace AsteroidsGame.Sprites
         public Bitmap image { get; set; }
 
         protected static Random random = new Random(DateTime.Now.Millisecond);
+        protected Vector randomVector(int minx, int maxx, int miny, int maxy)
+        {
+            Vector v = new Vector
+            (
+               random.Next(minx, maxx),
+               random.Next(miny, maxy)
+            );
+            return v;
+        }
 
         public Sprite()
         {
