@@ -10,10 +10,13 @@ namespace AsteroidsGame.Sprites
         public int x { get; set; }
         public int y { get; set; }
 
-        public Vector()
+        public Vector():this(0,0)
         {
-            x = 0;
-            y = 0;
+        }
+        public Vector(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
         }
 
         public void Move(int x,int y)

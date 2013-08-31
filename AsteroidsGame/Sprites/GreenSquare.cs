@@ -8,11 +8,11 @@ using System.Drawing;
 
 namespace AsteroidsGame.Sprites
 {
-    public class Rock : Sprite
+    public class GreenSquare : Sprite
     {
         static Random random = new Random(DateTime.Now.Millisecond);
 
-        public Rock()
+        public GreenSquare()
         {
             image = new Bitmap(50, 50);
           using (Graphics g = Graphics.FromImage(image)) 

@@ -9,54 +9,25 @@ using System.Threading;
 
 namespace AsteroidsGame.Sprites
 {
-    public class Universe
+    public class Universe : Sprite
     {
-        public Bitmap image { get; private set; }
-        public List<Sprite> sprites { get; set; }
-        public Graphics g { get; set; }
-        public bool ended = false;
-        public static int x;
-        public static int y;
+        public  int x { get; set; }
+        public  int y { get; set; }
 
         public Form form;
 
-        public Universe(Form form)
+        public Universe(int x, int y)
         {
-            sprites = new List<Sprite>();
-            this.form = form;
-            //g = form.CreateGraphics();
-            x = form.Width;
-            y = form.Height;
-
+            this.x=x;
+            this.y=y;
+            Update();
+        }
+        public void Update()
+        {
             image = new Bitmap(x, y);
- 
-            g = Graphics.FromImage(image);
+            Graphics g = Graphics.FromImage(image);
             g.Clear(Color.Black);
         }
-        public void Setup()
-        {
-            sprites.Add(new Rock());
-            sprites.Add(new Rock());
-            sprites.Add(new Rock());
-        }
-        public void GameLoop()
-        {
-            while (!ended)
-            {
-                g.Clear(Color.Black);
-                foreach (Sprite s in sprites)
-                {
-                    s.Update();
-                    s.Draw(image);
-                }
-                form.Invalidate();
-                Thread.Sleep(100);
-                
-            }
-        }
-        public void Refresh()
-        {
-
-        }
+      
     }
 }
